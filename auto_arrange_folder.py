@@ -100,7 +100,7 @@ if user_input_excel is not None:
                     tahun_masa_pajak = str(tahun_pajak) + '-' + str(masa_pajak)
                 
                 
-                st.write(str(i) + nama_npwp_perusahaan)
+                # st.write(str(i) + nama_npwp_perusahaan)
                 
                 
                 
@@ -115,6 +115,7 @@ if user_input_excel is not None:
                     os.mkdir(os.path.join(result_path, nama_npwp_perusahaan, tahun_masa_pajak))
                 path_to_save = os.path.join(result_path, nama_npwp_perusahaan, tahun_masa_pajak)
 
+                st.write(os.listdir(os.path.join(target_path)))
                 shutil.copy(glob.glob(os.path.join(target_path,'*pdf'))[i], path_to_save)
             
             # st.write(os.listdir(os.getcwd()))
