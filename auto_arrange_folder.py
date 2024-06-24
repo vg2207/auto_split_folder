@@ -78,6 +78,7 @@ if user_input_excel is not None:
         if submit_button_clicked :
 
             for i in range(len(lst)):
+                st.write(lst[i])
                 matching_index = df.index[lst[i] == df[user_input_ID]]
                 st.write(matching_index)
                 nama_perusahaan = []
