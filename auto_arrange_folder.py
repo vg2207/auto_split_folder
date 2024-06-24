@@ -24,6 +24,7 @@ if user_input_excel is not None:
     if user_input_excel.name.endswith('.xlsx'):
         df=pd.read_excel(user_input_excel, dtype='string')
         st.sidebar.success('Database File Uploaded Successfully!')
+        st.write('Number of excel data :' + str(len(df)))
         # st.sidebar.write(df)
     else:
         st.sidebar.warning('You need to upload an excel file')
@@ -36,13 +37,17 @@ if user_input_excel is not None:
             with zipfile.ZipFile(user_input_folder, 'r') as z:
                 z.extractall(target_path)
             st.sidebar.success('Folder Uploaded Successfully!')
+            a = os.listdir(target_path)
+            st.write('Number of pdf files :' + str(len(a)))
         else:
             st.sidebar.warning('You need to upload zip type file')
         
         # tab1, tab2 = st.tabs(["Setting", "Run Apps"])
         # with tab1 :
 
-
+        if len(lst) != len(df) :
+            st.error('Data length not matched!')
+        
         col_1, col_2, col_3, col_4, col_5 = st.columns(5)
         with st.container():
             with col_1:
@@ -61,8 +66,7 @@ if user_input_excel is not None:
                 # user_input_ID = 'ID_SISTEM'
                 user_input_ID = 'NO_BUKTI_POTONG'
 
-        a = os.listdir(target_path)
-        st.write('Number of pdf files :' + str(len(a)))
+        
         
         submit_button_clicked = st.button("Submit", type="primary", use_container_width=True)
 
@@ -76,8 +80,7 @@ if user_input_excel is not None:
                 # lst.append(os.path.splitext(x)[0][-36 :])
 
 
-            if len(lst) != len(df) :
-                st.error('Data length not matched!')
+            
 
 
             for i in range(len(lst)):
