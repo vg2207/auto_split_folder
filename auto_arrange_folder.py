@@ -22,7 +22,7 @@ user_input_folder = st.sidebar.file_uploader("Upload pdf folder", type=['zip'], 
 
 if user_input_excel is not None:
     if user_input_excel.name.endswith('.xlsx'):
-        df=pd.read_excel(user_input_excel, dtype='string')
+        df=pd.read_excel(user_input_excel, dtype='string').reset_index(drop=True)
         st.sidebar.success('Database File Uploaded Successfully!')
         st.write('Number of excel data :' + str(len(df)))
         # st.sidebar.write(df)
