@@ -87,15 +87,24 @@ if user_input_excel is not None:
                 matching_index = df.index[lst[i] == df[user_input_ID]]
                 nama_perusahaan = []
                 npwp_perusahaan = []
-                nama_perusahaan = df.loc[matching_index, user_input_perusahaan]
-                npwp_perusahaan = df.loc[matching_index, user_input_npwp]
-                nama_npwp_perusahaan = str(nama_perusahaan.item()) + ' (' + str(npwp_perusahaan.item()) + ')'
-                
-                st.write(str(i) + nama_npwp_perusahaan)
                 tahun_pajak = []
                 masa_pajak = []
-                tahun_pajak = df.loc[matching_index, user_input_tahun_pajak]
-                masa_pajak = df.loc[matching_index, user_input_masa_pajak]
+                if matching_index is not None :
+                    nama_perusahaan = df.loc[matching_index, user_input_perusahaan]
+                    npwp_perusahaan = df.loc[matching_index, user_input_npwp]
+                    tahun_pajak = df.loc[matching_index, user_input_tahun_pajak]
+                    masa_pajak = df.loc[matching_index, user_input_masa_pajak]
+                else :
+                    nama_perusahaan = 'blank'
+                    npwp_perusahaan = 'blank'
+                    tahun_pajak = 'blank'
+                    masa_pajak = 'blank'
+                
+                nama_npwp_perusahaan = str(nama_perusahaan.item()) + ' (' + str(npwp_perusahaan.item()) + ')'
+                # st.write(str(i) + nama_npwp_perusahaan)
+                
+                
+                
                 tahun_masa_pajak = str(tahun_pajak.item()) + '-' + str(masa_pajak.item())
 
                 result_path = os.path.join(os.getcwd(),'Result')
