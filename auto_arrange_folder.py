@@ -38,7 +38,11 @@ if user_input_excel is not None:
                 z.extractall(target_path)
             st.sidebar.success('Folder Uploaded Successfully!')
             a = os.listdir(target_path)
-            st.write('Number of pdf files :' + str(len(a)))
+            lst = []
+            for x in a :
+                lst.append(os.path.splitext(x)[0][:10])
+                # lst.append(os.path.splitext(x)[0][-36 :])
+            st.write('Number of pdf files :' + str(len(lst)))
         else:
             st.sidebar.warning('You need to upload zip type file')
         
@@ -74,10 +78,7 @@ if user_input_excel is not None:
 
 
             
-            lst = []
-            for x in a :
-                lst.append(os.path.splitext(x)[0][:10])
-                # lst.append(os.path.splitext(x)[0][-36 :])
+            
 
 
             
