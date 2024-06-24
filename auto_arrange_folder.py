@@ -84,7 +84,7 @@ if user_input_excel is not None:
                 npwp_perusahaan = []
                 tahun_pajak = []
                 masa_pajak = []
-                if matching_index >= 0 :
+                if matching_index.size > 0 :
                     nama_perusahaan = df.loc[matching_index, user_input_perusahaan]
                     npwp_perusahaan = df.loc[matching_index, user_input_npwp]
                     tahun_pajak = df.loc[matching_index, user_input_tahun_pajak]
