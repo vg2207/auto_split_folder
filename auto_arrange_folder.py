@@ -42,6 +42,7 @@ if user_input_excel is not None:
             for x in a :
                 lst.append(os.path.splitext(x)[0][:10])
                 # lst.append(os.path.splitext(x)[0][-36 :])
+            st.write(lst)
             st.write('Number of pdf files :' + str(len(lst)))
         else:
             st.sidebar.warning('You need to upload zip type file')
