@@ -76,11 +76,15 @@ if user_input_excel is not None:
 
             for i in range(len(lst)):
                 matching_index = df.index[df[user_input_ID] == lst[i]]
+                nama_perusahaan = []
+                npwp_perusahaan = []
                 nama_perusahaan = df.loc[matching_index, user_input_perusahaan]
                 npwp_perusahaan = df.loc[matching_index, user_input_npwp]
                 nama_npwp_perusahaan = str(nama_perusahaan.item()) + ' (' + str(npwp_perusahaan.item()) + ')'
                 tahun_pajak = df.loc[matching_index, user_input_tahun_pajak]
                 masa_pajak = df.loc[matching_index, user_input_masa_pajak]
+                tahun_pajak = []
+                masa_pajak = []
                 tahun_masa_pajak = str(tahun_pajak.item()) + '-' + str(masa_pajak.item())
 
                 result_path = os.path.join(os.getcwd(),'Result')
