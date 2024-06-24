@@ -72,36 +72,36 @@ if user_input_excel is not None:
 
             if len(lst) != len(df) :
                 st.error('Data length not matched!')
-            else :
 
-                for i in range(len(lst)):
-                    matching_index = df.index[df[user_input_ID] == lst[i]]
-                    nama_perusahaan = df.loc[matching_index, user_input_perusahaan]
-                    npwp_perusahaan = df.loc[matching_index, user_input_npwp]
-                    nama_npwp_perusahaan = str(nama_perusahaan.item()) + ' (' + str(npwp_perusahaan.item()) + ')'
-                    tahun_pajak = df.loc[matching_index, user_input_tahun_pajak]
-                    masa_pajak = df.loc[matching_index, user_input_masa_pajak]
-                    tahun_masa_pajak = str(tahun_pajak.item()) + '-' + str(masa_pajak.item())
 
-                    result_path = os.path.join(os.getcwd(),'Result')
-                    if os.path.exists(result_path) == False:
-                        os.mkdir(result_path)
-                    if os.path.exists(os.path.join(result_path, nama_npwp_perusahaan)) == False:
-                        os.mkdir(os.path.join(result_path, nama_npwp_perusahaan))
-                    if os.path.exists(os.path.join(result_path, nama_npwp_perusahaan, tahun_masa_pajak)) == False:
-                        os.mkdir(os.path.join(result_path, nama_npwp_perusahaan, tahun_masa_pajak))
-                    path_to_save = os.path.join(result_path, nama_npwp_perusahaan, tahun_masa_pajak)
-                    
-                    shutil.copy(glob.glob(os.path.join(os.getcwd(),os.path.splitext(user_input_folder.name)[0],'*pdf'))[i], path_to_save)
+            for i in range(len(lst)):
+                matching_index = df.index[df[user_input_ID] == lst[i]]
+                nama_perusahaan = df.loc[matching_index, user_input_perusahaan]
+                npwp_perusahaan = df.loc[matching_index, user_input_npwp]
+                nama_npwp_perusahaan = str(nama_perusahaan.item()) + ' (' + str(npwp_perusahaan.item()) + ')'
+                tahun_pajak = df.loc[matching_index, user_input_tahun_pajak]
+                masa_pajak = df.loc[matching_index, user_input_masa_pajak]
+                tahun_masa_pajak = str(tahun_pajak.item()) + '-' + str(masa_pajak.item())
+
+                result_path = os.path.join(os.getcwd(),'Result')
+                if os.path.exists(result_path) == False:
+                    os.mkdir(result_path)
+                if os.path.exists(os.path.join(result_path, nama_npwp_perusahaan)) == False:
+                    os.mkdir(os.path.join(result_path, nama_npwp_perusahaan))
+                if os.path.exists(os.path.join(result_path, nama_npwp_perusahaan, tahun_masa_pajak)) == False:
+                    os.mkdir(os.path.join(result_path, nama_npwp_perusahaan, tahun_masa_pajak))
+                path_to_save = os.path.join(result_path, nama_npwp_perusahaan, tahun_masa_pajak)
                 
-                # st.write(os.listdir(os.getcwd()))
+                shutil.copy(glob.glob(os.path.join(os.getcwd(),os.path.splitext(user_input_folder.name)[0],'*pdf'))[i], path_to_save)
+            
+            # st.write(os.listdir(os.getcwd()))
 
-                shutil.make_archive('Result', 'zip', result_path)
-                
-                result_path_zipped = os.path.join(os.getcwd(),'Result.zip')
+            shutil.make_archive('Result', 'zip', result_path)
+            
+            result_path_zipped = os.path.join(os.getcwd(),'Result.zip')
 
-                with open(result_path_zipped, "rb") as fp :
-                    button_clicked = st.download_button(label=':cloud: Download Result', type="secondary", data=fp, file_name='Result.zip', mime="application/zip")
+            with open(result_path_zipped, "rb") as fp :
+                button_clicked = st.download_button(label=':cloud: Download Result', type="secondary", data=fp, file_name='Result.zip', mime="application/zip")
 
 
 
