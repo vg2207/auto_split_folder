@@ -73,8 +73,8 @@ if user_input_excel is not None:
             if len(lst) != len(df) :
                 st.error('Data length not matched!')
 
-            for i in range(2):
-            # for i in range(len(lst)):
+
+            for i in range(len(lst)):
                 matching_index = df.index[df[user_input_ID] == lst[i]]
                 nama_perusahaan = df.loc[matching_index, user_input_perusahaan]
                 npwp_perusahaan = df.loc[matching_index, user_input_npwp]
@@ -93,7 +93,7 @@ if user_input_excel is not None:
                     os.mkdir(os.path.join(result_path, nama_npwp_perusahaan, tahun_masa_pajak))
                 path_to_save = os.path.join(result_path, nama_npwp_perusahaan, tahun_masa_pajak)
 
-                # shutil.copy(glob.glob(os.path.join(os.getcwd(),os.path.splitext(user_input_folder.name)[0],'*pdf'))[i], path_to_save)
+                shutil.copy(glob.glob(os.path.join(os.getcwd(),os.path.splitext(user_input_folder.name)[0],'*pdf'))[i], path_to_save)
             
             # st.write(os.listdir(os.getcwd()))
 
