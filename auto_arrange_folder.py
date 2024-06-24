@@ -61,12 +61,15 @@ if user_input_excel is not None:
                 # user_input_ID = 'ID_SISTEM'
                 user_input_ID = 'NO_BUKTI_POTONG'
 
+        a = os.listdir(target_path)
+        st.write('Number of pdf files :" + str(a))
+        
         submit_button_clicked = st.button("Submit", type="primary", use_container_width=True)
 
         if submit_button_clicked :
 
 
-            a = os.listdir(target_path)
+            
             lst = []
             for x in a :
                 lst.append(os.path.splitext(x)[0][:10])
