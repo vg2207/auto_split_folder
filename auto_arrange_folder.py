@@ -117,7 +117,7 @@ if user_input_excel is not None:
 
                 # st.write(os.listdir(os.path.join(target_path)))
                 # shutil.copy(glob.glob(os.path.join(target_path,'*pdf'))[i], path_to_save)
-                shutil.copy(glob.glob(os.listdir(target_path)[i], path_to_save)
+                shutil.copy(glob.glob(os.listdir(target_path)[i]), path_to_save)
             
             # st.write(os.listdir(os.getcwd()))
 
