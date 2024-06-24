@@ -71,7 +71,7 @@ if user_input_excel is not None:
                 # user_input_ID = 'ID_SISTEM'
                 user_input_ID = 'NO_BUKTI_POTONG'
 
-        
+        st.write(lst)
         
         submit_button_clicked = st.button("Submit", type="primary", use_container_width=True)
 
