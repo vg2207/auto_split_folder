@@ -86,7 +86,7 @@ if user_input_excel is not None:
                 
                 st.write(str(i) + nama_npwp_perusahaan)
                 tahun_pajak = []
-                masa_pajak =
+                masa_pajak = []
                 tahun_pajak = df.loc[matching_index, user_input_tahun_pajak]
                 masa_pajak = df.loc[matching_index, user_input_masa_pajak]
                 tahun_masa_pajak = str(tahun_pajak.item()) + '-' + str(masa_pajak.item())
