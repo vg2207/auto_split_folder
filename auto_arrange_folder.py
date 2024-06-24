@@ -80,8 +80,7 @@ if user_input_excel is not None:
                 npwp_perusahaan = []
                 nama_perusahaan = df.loc[matching_index, user_input_perusahaan]
                 npwp_perusahaan = df.loc[matching_index, user_input_npwp]
-                st.write(str(df.loc[matching_index, user_input_perusahaan]))
-                nama_npwp_perusahaan = str(nama_perusahaan.item()) + ' (' + str(npwp_perusahaan.item()) + ')'
+                nama_npwp_perusahaan = str(nama_perusahaan) + ' (' + str(npwp_perusahaan) + ')'
                 tahun_pajak = df.loc[matching_index, user_input_tahun_pajak]
                 masa_pajak = df.loc[matching_index, user_input_masa_pajak]
                 tahun_pajak = []
