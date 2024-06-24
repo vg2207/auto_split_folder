@@ -65,7 +65,7 @@ if user_input_excel is not None:
         if submit_button_clicked :
 
 
-            a = os.listdir(os.path.join(os.getcwd(),os.path.splitext(user_input_folder.name)[0]))
+            a = os.listdir(target_path)
             lst = []
             for x in a :
                 lst.append(os.path.splitext(x)[0][-36 :])
@@ -75,7 +75,7 @@ if user_input_excel is not None:
 
 
             for i in range(len(lst)):
-                matching_index = df.index[df[user_input_ID] == lst[i]]
+                matching_index = df.index[lst[i] == df[user_input_ID]]
                 nama_perusahaan = df.loc[matching_index, user_input_perusahaan]
                 npwp_perusahaan = df.loc[matching_index, user_input_npwp]
                 nama_npwp_perusahaan = str(nama_perusahaan.item()) + ' (' + str(npwp_perusahaan.item()) + ')'
