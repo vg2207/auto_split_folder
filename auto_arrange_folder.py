@@ -78,10 +78,10 @@ if user_input_excel is not None:
         if submit_button_clicked :
 
             for i in range(len(lst)):
-                st.write(a[i])
-                st.write(lst[i])
+                # st.write(a[i])
+                # st.write(lst[i])
                 matching_index = df.index[lst[i] == df[user_input_ID]]
-                st.write(matching_index)
+                # st.write(matching_index)
                 nama_perusahaan = []
                 npwp_perusahaan = []
                 tahun_pajak = []
@@ -102,7 +102,7 @@ if user_input_excel is not None:
                     tahun_masa_pajak = str(tahun_pajak) + '-' + str(masa_pajak)
                 
                 
-                st.write(str(i) + nama_npwp_perusahaan)
+                # st.write(str(i) + nama_npwp_perusahaan)
                 
                 
                 
@@ -117,7 +117,7 @@ if user_input_excel is not None:
                     os.mkdir(os.path.join(result_path, nama_npwp_perusahaan, tahun_masa_pajak))
                 path_to_save = os.path.join(result_path, nama_npwp_perusahaan, tahun_masa_pajak)
 
-                st.write(glob.glob(os.path.join(os.getcwd(),os.path.splitext(user_input_folder.name)[0],'*pdf'))[i])
+                # st.write(glob.glob(os.path.join(os.getcwd(),os.path.splitext(user_input_folder.name)[0],'*pdf'))[i])
                 # shutil.copy(glob.glob(os.path.join(target_path,'*pdf'))[i], path_to_save)
                 shutil.copy(glob.glob(os.path.join(os.getcwd(),os.path.splitext(user_input_folder.name)[0],'*pdf'))[i], path_to_save)
             
