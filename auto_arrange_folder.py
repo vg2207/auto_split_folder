@@ -85,7 +85,7 @@ if user_input_excel is not None:
                 masa_pajak = df.loc[matching_index, user_input_masa_pajak]
                 tahun_pajak = []
                 masa_pajak = []
-                tahun_masa_pajak = str(tahun_pajak.item()) + '-' + str(masa_pajak.item())
+                tahun_masa_pajak = str(tahun_pajak) + '-' + str(masa_pajak)
 
                 result_path = os.path.join(os.getcwd(),'Result')
                 if os.path.exists(result_path) == False:
