@@ -40,8 +40,8 @@ if user_input_excel is not None:
             a = os.listdir(target_path)
             lst = []
             for x in a :
-                # lst.append(os.path.splitext(x)[0][:10])
-                lst.append(os.path.splitext(x)[0][-36 :])
+                lst.append(os.path.splitext(x)[0][:10])
+                # lst.append(os.path.splitext(x)[0][-36 :])
             # st.write(lst)
             st.write('Number of pdf files :' + str(len(lst)))
         else:
@@ -68,8 +68,8 @@ if user_input_excel is not None:
                 user_input_tahun_pajak = 'TAHUN_PAJAK'
         with st.container():
             with col_5:
-                user_input_ID = 'ID_SISTEM'
-                # user_input_ID = 'NO_BUKTI_POTONG'
+                # user_input_ID = 'ID_SISTEM'
+                user_input_ID = 'NO_BUKTI_POTONG'
 
         
         
