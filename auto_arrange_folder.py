@@ -96,7 +96,7 @@ if user_input_excel is not None:
                     npwp_perusahaan = 'blank'
                     tahun_pajak = 'blank'
                     masa_pajak = 'blank'
-                    nama_npwp_perusahaan = str(nama_perusahaan) + ' (' + str(npwp_perusahaan) + ')'
+                    nama_npwp_perusahaan = str(nama_perusahaan) + ' (' + str(npwp_perusahaan) + ')' + ' - ' + str(i)
                     tahun_masa_pajak = str(tahun_pajak) + '-' + str(masa_pajak)
                 
                 
