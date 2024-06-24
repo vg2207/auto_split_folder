@@ -98,7 +98,7 @@ if user_input_excel is not None:
 
                 shutil.copy(glob.glob(os.path.join(os.getcwd(),os.path.splitext(user_input_folder.name)[0],'*pdf'))[i], path_to_save)
             
-            # st.write(os.listdir(os.getcwd()))
+            st.write(os.listdir(os.getcwd()))
 
             shutil.make_archive('Result', 'zip', result_path)
             
