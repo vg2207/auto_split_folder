@@ -72,6 +72,7 @@ if user_input_excel is not None:
                 lst.append(os.path.splitext(x)[0][:10])
                 # lst.append(os.path.splitext(x)[0][-36 :])
 
+            st.write(a)
             st.write(lst)
             st.write(len(lst))
             if len(lst) != len(df) :
