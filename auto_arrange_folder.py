@@ -79,7 +79,7 @@ if user_input_excel is not None:
 
             for i in range(len(lst)):
                 matching_index = df.index[lst[i] == df[user_input_ID]]
-                st.write(matching_index is not None)
+                st.write(matching_index)
                 nama_perusahaan = []
                 npwp_perusahaan = []
                 tahun_pajak = []
