@@ -116,7 +116,8 @@ if user_input_excel is not None:
                 path_to_save = os.path.join(result_path, nama_npwp_perusahaan, tahun_masa_pajak)
 
                 st.write(os.listdir(os.path.join(target_path)))
-                shutil.copy(glob.glob(os.path.join(target_path,'*pdf'))[i], path_to_save)
+                # shutil.copy(glob.glob(os.path.join(target_path,'*pdf'))[i], path_to_save)
+                shutil.copy(glob.glob(os.path.join(os.getcwd(),os.path.splitext(user_input_folder.name)[0],'*pdf'))[i], path_to_save)
             
             # st.write(os.listdir(os.getcwd()))
 
