@@ -96,7 +96,7 @@ if user_input_excel is not None:
                     masa_pajak = 'blank'
                 
                 nama_npwp_perusahaan = str(nama_perusahaan.item()) + ' (' + str(npwp_perusahaan.item()) + ')'
-                # st.write(str(i) + nama_npwp_perusahaan)
+                st.write(str(i) + nama_npwp_perusahaan)
                 
                 
                 
