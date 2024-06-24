@@ -73,12 +73,13 @@ if user_input_excel is not None:
             if len(lst) != len(df) :
                 st.error('Data length not matched!')
 
-
-            for i in range(len(lst)):
+            for i in range(2):
+            # for i in range(len(lst)):
                 matching_index = df.index[df[user_input_ID] == lst[i]]
                 nama_perusahaan = df.loc[matching_index, user_input_perusahaan]
                 npwp_perusahaan = df.loc[matching_index, user_input_npwp]
                 nama_npwp_perusahaan = str(nama_perusahaan.item()) + ' (' + str(npwp_perusahaan.item()) + ')'
+                st.write(nama_npwp_perusahaan)
                 tahun_pajak = df.loc[matching_index, user_input_tahun_pajak]
                 masa_pajak = df.loc[matching_index, user_input_masa_pajak]
                 tahun_masa_pajak = str(tahun_pajak.item()) + '-' + str(masa_pajak.item())
