@@ -42,7 +42,7 @@ if user_input_excel is not None:
             for x in a :
                 lst.append(os.path.splitext(x)[0][:10])
                 # lst.append(os.path.splitext(x)[0][-36 :])
-            st.write(lst)
+            # st.write(lst)
             st.write('Number of pdf files :' + str(len(lst)))
         else:
             st.sidebar.warning('You need to upload zip type file')
@@ -77,16 +77,9 @@ if user_input_excel is not None:
 
         if submit_button_clicked :
 
-
-            
-            
-
-
-            
-
-
             for i in range(len(lst)):
                 matching_index = df.index[lst[i] == df[user_input_ID]]
+                st.write(matching_index)
                 nama_perusahaan = []
                 npwp_perusahaan = []
                 tahun_pajak = []
